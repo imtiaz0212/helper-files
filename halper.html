@@ -1,0 +1,26 @@
+<select ui-select2="{ allowClear: true}" class="form-control" ng-model="select2" data-placeholder="Select employee">
+	<option value="one">First</option>
+	<option value="two">Second</option>
+	<option value="three">Third</option>
+</select>
+
+
+	<?php if (checkAuth('super')){ ?>
+		<div class="form-group">
+			<label for="" class="col-md-3 control-label">Showroom <span class="req">*</span></label>
+			<div class="col-md-5">	
+				<select name="godown_code" ng-init="godown_code='<?php echo $this->data["branch"]; ?>'" ng-model="godown_code" ng-value="godown_code" class="form-control" required>
+					<option value="">-- Select showroom --</option>
+					<?php
+					if (!empty($allGodown)) {
+						foreach ($allGodown as $option) { ?>
+							<option value="<?php echo $option->code; ?>"><?php echo $option->name; ?></option>
+						<?php }
+					} ?>
+				</select>
+			</div>
+		</div>
+	<?php }else{ ?>
+		<input type="hidden" name="godown_code" ng-init="godown_code='<?php echo $this->data["branch"]; ?>'" ng-model="godown_code" ng-value="godown_code" required>
+	<?php } ?>
+
