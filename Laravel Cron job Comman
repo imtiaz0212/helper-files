@@ -1,0 +1,1 @@
+* 	* 	* 	* 	* 	/opt/cpanel/ea-php82/root/usr/bin/php /home/linksposting/public_html/artisan schedule:run >> /dev/null 2>&1
