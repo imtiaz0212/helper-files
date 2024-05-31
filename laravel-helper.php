@@ -8,6 +8,8 @@ RewriteCond %{HTTP_HOST} ^www\domain\.com
 RewriteRule ^(.*)$ https://domain.com$1 [R=301,L]
 
 
+cron job command
+/opt/cpanel/ea-php82/root/usr/bin/php /home/devzet/public_html/artisan schedule:run >> /dev/null 2>&1
 
 // root command send email servicemanager
 [program:linksposting-worker]
