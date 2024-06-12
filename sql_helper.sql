@@ -1,3 +1,7 @@
+// remove strint first digit
+SELECT right(image, length(image) - 7) from service_images; 
+UPDATE `service_images` SET image = right(image, length(image) - 7);
+
 // delete duplicate row
 DELETE t1 FROM products t1 INNER JOIN products t2 WHERE t1.id < t2.id AND t1.product_name = t2.product_name;
 
