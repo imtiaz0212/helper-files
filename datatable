@@ -1,0 +1,30 @@
+$(document).ready(function() {
+
+    var table = $('#dataTable').DataTable({
+        searching: true, // Disable searching
+        paging: false, // Disable pagination
+        info: false, // Hide "Showing 1 to 5 of 5 entries"
+        //scrollX: true, // Enable horizontal scrolling if needed
+        "aaSorting": []
+    });
+
+    const dropdowns = $('.table-dropdown-btn', table.cells(null, 8).nodes());
+    const dropdown = dropdowns.each((index, dropdownToggleEl) => {
+
+        var instance = new bootstrap.Dropdown(dropdownToggleEl, {
+            popperConfig(defaultBsPopperConfig) {
+            return { ...defaultBsPopperConfig, strategy: "fixed" };
+            },
+        });
+
+        //Attach event listeners to the dropdown trigger
+        dropdownToggleEl.addEventListener("show.bs.dropdown", function (event) {
+
+            $(event.target).closest("td").addClass("z-index-3");
+        });
+
+        dropdownToggleEl.addEventListener("hide.bs.dropdown", function (event) {
+            $(event.target).closest("td").removeClass("z-index-3");
+        });
+    });
+});
