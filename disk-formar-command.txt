@@ -1,0 +1,16 @@
+ command prompt run as Administrator
+
+step 1: diskpart
+
+step 2: list disk
+
+step 3: select disk 0
+
+step 4: clean
+
+step 5: create partition primary
+
+step 6: format fs=ntfs
+
+step 7: assign
+
