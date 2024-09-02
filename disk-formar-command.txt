@@ -1,4 +1,4 @@
- command prompt run as Administrator
+Command prompt run as Administrator
 
 step 1: diskpart
 
